@@ -27,6 +27,6 @@ All the IR send/ recieve commands are interfaced using cyborg5's amazing [IRLib2
 
 Flash the board with included code, and open serial monitor with appropriat baud rate. Take your EUFY remote, point it at the reciever, and voila! The code will print the RAW IR code for that particular button. The EUFY's IR reciever is indeed following the exact same procedure to get signals from its remote!
 
-![Circuit for copying IR codes](EUFY remote read_bb.png)
+![Circuit for copying IR codes](EUFY_remote_read_bb.png)
 
 For the geeks and nerds out there, most consumer IR signals are carried on a 38kHz carrier frequency, which is true here. Many big brands like SONY, NEC and PANASONIC have HEX codes associated with this RAW data, and can be decoded using IRLib2. Since EUFY does not follow any of these codes - we will just read and send RAW IR codes - simply an array of numbers representing box wave (series of ON for certain amount of time, followed by OFF for certain amount of time). 
