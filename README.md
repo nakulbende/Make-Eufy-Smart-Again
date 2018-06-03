@@ -19,6 +19,14 @@ For controlling, managing MQTTT web requests and GUI - we are going to usee the 
 
 Using a IR blaster controlled by esp8266, we can replay the codes as if they were coming from EUFY's original remote. 
 
-Here is the step-by-step guide to learn IR codes > make circuits > program esp8266 > develop Blynk project > integrate with IFTTT 
+Here is the step-by-step guide for copying IR codes > designing circuit > coding esp8266 > making Blynk GUI > integrating with IFTTT (and optionally with Google Home)
 
-## Reading IR codes: 
+### Reading IR codes: 
+
+All the IR send/ recieve commands are interfaced using cyborg5's amazing [IRLib2](https://github.com/cyborg5/IRLib2). Install it by suing library manager, or following instructions on the github page. Following instructions from the library's example [rawRecv](https://github.com/cyborg5/IRLib2/blob/master/IRLib2/examples/rawRecv/rawRecv.ino), I have included a cleaner version in this projet ([IR_read_RAW_codes](IR_read_RAW_codes/IR_read_RAW_codes.ino). To follow, simply connect the rightmost and center pin of IR reciever to 3.3V and GND pin of any arduino board, and the leftmost pin to digital pin 2.
+
+Flash the board with included code, and open serial monitor with appropriat baud rate. Take your EUFY remote, point it at the reciever, and voila! The code will print the RAW IR code for that particular button. The EUFY's IR reciever is indeed following the exact same procedure to get signals from its remote!
+
+![Circuit for copying IR codes](EUFY remote read_bb.png)
+
+For the geeks and nerds out there, most consumer IR signals are carried on a 38kHz carrier frequency, which is true here. Many big brands like SONY, NEC and PANASONIC have HEX codes associated with this RAW data, and can be decoded using IRLib2. Since EUFY does not follow any of these codes - we will just read and send RAW IR codes - simply an array of numbers representing box wave (series of ON for certain amount of time, followed by OFF for certain amount of time). 
