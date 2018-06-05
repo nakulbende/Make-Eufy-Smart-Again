@@ -19,7 +19,7 @@ Make a internet enabled IR controller for EUFY vacuum cleaners. Recent models of
 
 3. An IR blaster controlled by esp8266, will replay the codes as if they were coming from EUFY's original remote. 
 
-Here is a step-by-step guide for reading IR codes > designing circuit > coding esp8266 > making Blynk GUI > integrating with IFTTT (and optionally with Google Home)
+Here is a step-by-step guide for reading IR codes > designing circuit > programming esp8266 > making Blynk GUI > integrating with IFTTT (and optionally with Google Home)
 
 ### Reading IR codes from EUFY's remote: (skip if using EUFY v11 - codes are already included in this project)
 
@@ -84,4 +84,23 @@ Connect everything according to the following circuit:
 
 This is how the final circuit look slike on a proto board: 
 
+![Actual circuit](Circuit.JPG)
+
+Mounting options will be discussed later - but make sure you do not block the IR blaster with box/ mounts.  
+
+### Programming esp8266
+
+Flash esp8266 with the [supplied code](/IR_remote_control_EUFY_github/IR_remote_control_EUFY_github.ino) using following settings: 
+
+![Flash settings](ArduinoIOsettings.png)
+
+The following snippets describe what this code does:
+
+#### Line 10 - 15 define connection settings, change according to your Wifi settings and Blynk authentication code
+
+10-12     Define `ssid` and `password` according to wifi settings. 
+
+13        Add new device in Blynk mobile app, and define the authorization token as `auth` 
+
+14-15     We will be pushing over the air updates to your esp8266 to make any changes after first time, so define the `OTAName` and `OTAPassword` to identify and secure it. 
 
