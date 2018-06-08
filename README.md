@@ -25,7 +25,7 @@ Here is a step-by-step guide for reading IR codes > designing circuit > programm
 
 All the IR send/ recieve commands are interfaced using cyborg5's amazing [IRLib2](https://github.com/cyborg5/IRLib2). Install it from library manager, or follow instructions on repo's github page. Based on library's example [rawRecv](https://github.com/cyborg5/IRLib2/blob/master/IRLib2/examples/rawRecv/rawRecv.ino), we will be reading IR codes with any arduino based board programmed with ([IR_read_RAW_codes](IR_read_RAW_codes/IR_read_RAW_codes.ino). To equip the IR reciever, simply connect pins to 3.3V, GND and digital pin 2. Flash the board with [included code](IR_read_RAW_codes/IR_read_RAW_codes.ino), and open serial monitor with appropriat baud rate. Take your EUFY remote, point it at the reciever, and voila! The code will print the RAW IR code for that particular button. The EUFY's IR reciever is indeed following the exact same procedure to read IR signals from its remote!
 
-![Circuit for copying IR codes](IR_remote_read.png)
+![Circuit for copying IR codes](/Images/IR_remote_read.png)
 
 For the geeks and nerds out there, most consumer IR signals are carried on a 38kHz carrier frequency, which is also the case here. Some major brands like SONY, NEC and PANASONIC have HEX codes associated with this RAW data, and can be decoded using IRLib2. Since EUFY does not follow any of these standard codes - we will just read and send RAW IR codes - simply an array of numbers representing how long the LEd was ON, followed by how long it was OFF for.
 
@@ -74,7 +74,7 @@ unsigned int  rawData[83] = {3000,3000, 500,500, 500,1500, 500,1500, 500,500, 50
 
 The ESP is a wonderful device - packing wifi, digital/ analog IO in such a small footprint is no small feat of engineering. Chinese manufacturers do not get credit for their innovation - ESP is definately an hallmark from Espressif Systems! We will be using a nodeMCU developer board - you can certainly use a esp8266-12E directly if you do not have the board. This is how the circuit should be connected, and the final product: 
 
-![Circuit and actual product](EUFY_remote_control.png)
+![Circuit and actual product](/Images/EUFY_remote_control.png)
 
 Mounting options will be discussed later - but make sure you do not block the IR blaster with box/ mounts.  
 
@@ -82,7 +82,7 @@ Mounting options will be discussed later - but make sure you do not block the IR
 
 Flash esp8266 with the [supplied code](/IR_remote_control_EUFY_github/IR_remote_control_EUFY_github.ino) using following settings: 
 
-![Flash settings](ArduinoIOsettings.png)
+![Flash settings](/Images/ArduinoIOsettings.png)
 
 The following snippets describe what this code does:
 
@@ -112,8 +112,16 @@ Store the previously copied IR codes in structured arrays `ir_*`. Change the val
 
 The virtual pins defined in code (and discussed in previous section) can be assigned to individual buttons in Blynk app. An example of such GUI in making can be seen in following screenshots - feel free to alter or use as is. Although the widgets and settings are self explanatory - [Blynk Widget guide](http://docs.blynk.cc/#widgets) is a great resource!
 
-![Blynk GUI configuration](EUFY_Blynk_GUI.png)
+![Blynk GUI configuration](/Images/EUFY_Blynk_GUI.png)
 
-Finally, this allows you to replicate the remote functionality on your smartphone
+Finally, this allows you to replicate the remote functionality on your smartphone. Clean away!
 
-![Blynk remote](Blynk_remote.png)
+![Blynk remote](/Images/Blynk_remote.png)
+
+### IFTTT/ Google Home/ Alexa integration
+
+### Mounting options
+
+### Miscelenious
+
+
