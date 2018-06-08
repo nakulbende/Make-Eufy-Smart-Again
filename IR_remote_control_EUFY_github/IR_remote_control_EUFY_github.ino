@@ -35,8 +35,8 @@ IRsend irsend(IR_LED);          // Set the GPIO to send IR signals
 #define VPIN_timer V9           // Timer handle
 #define VPIN_spot V10           // Spot
 
-#define VPIN_everything V21     // Tag: everything
-#define VPIN_terminal V25       // Terminal
+#define VPIN_everything V21     // Tag: everything can be used to group devices and give one command to switch off/ on everything connected to blynk app
+#define VPIN_terminal V25       // Terminal monitoring through Blynk app
 
 #define VPIN_connected V30      // Connection
 
