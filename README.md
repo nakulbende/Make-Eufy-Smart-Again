@@ -114,14 +114,29 @@ The virtual pins defined in code (and discussed in previous section) can be assi
 
 ![Blynk GUI configuration](/Images/EUFY_Blynk_GUI.png)
 
-Finally, this allows you to replicate the remote functionality on your smartphone. Clean away!
+Finally, the EUFY remote functionality can be replicated on a smartphone. We made EUFY smart again!
 
 ![Blynk remote](/Images/Blynk_remote.png)
 
 ### IFTTT/ Google Home/ Alexa integration
 
+Read/ Write functions can be performed on Blynk virtual/ digital/ analog pins by putting data on the following URL: 
+
+http://`IP: blynk server`/`device authorization code`/pin/`pin identifier`
+
+`IP: blynk server` depends on your location. For US, it is 45.55.96.146. Open terminal and `ping blynk-cloud.com` to resolve the local IP address. Auth code helps in identifying the device, and pins can be defined as D1/ V1 etc. for digital or virtual pin. 
+
+Once URL is ready - use any action to trigger a webhook with following settings. For example, configure gogle assistant trigger to post 1 on V1 for sending Auto clean command to EUFY, whenever it detects "clean the house"
+
+![Webhooks setting](/Images/IFTTT_webhooks_settings.jpg)
+
 ### Mounting options
 
-### Miscelenious
+The battery pack and circuit can be mounted on the EUFY using command strips. Due to this, a slim battery pack should be preffered. The product listed only raises the height of EUFY slighly.  
 
+Getting power directly from the Eufy's battery is to be explored for future revisions. We have already tried getting power from the adapter jack besides the power button - which outputs a DC current, but also puts EUFY in charging mode if it detects a closed circuit. 
 
+### Future revisions/ areas of improvements:
+
+- With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night
+- Powering with Eufy's very capable battery - get rid of the battery pack altogather. 
