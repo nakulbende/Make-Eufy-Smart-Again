@@ -1,3 +1,5 @@
+//Written by nakulbende 2018
+
 #include <ESP8266WiFi.h>        // Wifi library for ESP
 #include <BlynkSimpleEsp8266.h> // Blynk library
 #include <ArduinoOTA.h>         // Library for over the air updates
@@ -10,7 +12,7 @@
 // Wifi, OTA, blynk credentials
 const char* ssid = "XXXXXXXX";                              // SSID
 const char* password = "XXXXXXXXXXXXXXX";                   // Password
-char auth[] = "XXXXXXXXXXXX";                               // Token for Ramukaka Esp8266
+char auth[] = "XXXXXXXXXXXX";                               // Token for Esp8266
 const char* OTAName = "XXXXXXXXXXXX";                       // OTA name
 const char* OTAPassword = "XXXXXXXXXXX";                    // OTA Password
 
@@ -144,7 +146,7 @@ BLYNK_WRITE(VPIN_clean){
     irsend.sendRaw(ir_auto, 83, khz);   // Send Auto Clean signal on press
     Blynk.virtualWrite(VPIN_play, 1);   // Denote that vacuum cleaner is in a cleaning mode
     delay(300);
-    terminal.println("Vickey will clean the rooms");
+    terminal.println("Eufy will clean the rooms");
   }
 }
 
