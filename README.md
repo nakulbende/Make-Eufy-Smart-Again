@@ -2,6 +2,8 @@
 
 Make a internet enabled IR controller for EUFY vacuum cleaners. Recent models of EUFY and Roomba vacuum cleaners include smartphone control, and my robot was feeling left out. So - lets make EUFY smart again!
 
+![Happy EUFY](/Images/Happy_EUFY.jpg)
+
 ## What you need: 
 
 - EUFY vacuum cleaner: [non-internet enabled models v11, v11s and v11+](https://www.eufylife.com/collections/cleaning)
