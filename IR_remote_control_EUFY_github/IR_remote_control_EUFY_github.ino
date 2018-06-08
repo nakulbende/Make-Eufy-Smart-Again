@@ -1,5 +1,3 @@
-//Written by nakulbende 2018
-
 #include <ESP8266WiFi.h>        // Wifi library for ESP
 #include <BlynkSimpleEsp8266.h> // Blynk library
 #include <ArduinoOTA.h>         // Library for over the air updates
