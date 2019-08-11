@@ -151,11 +151,13 @@ Once you have access to Eufy's belly, you can just route the wire to battery com
 
 ![Underside](/Images/Underside.jpg)
 
+I then secured all the wires using electrical tape, laden with superglue. It makes a nice sealed conduit for your wires. 
+
 ### Enclosures, and bumper modification
 
 One might notice all the 3d printed parts on cleaner. These not only protect the parasitic electronics that are taking a ride with our Eufy, but also increase the height of bumper to make sure the cleaner does not go under something and rip off the electroinics. All 3d printed files are in Images folder. 
 
-### Future revisions/ areas of improvements:
+### Previous revisions:
 
 - ~~With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night~~ **Dropped due to unreliable wakeup on esp's side**
 - Powering with Eufy's very capable battery - get rid of the battery pack altogather. **Update - successful**
