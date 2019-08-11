@@ -2,13 +2,14 @@
 
 Make a internet enabled IR controller for EUFY vacuum cleaners. Recent models of EUFY and Roomba vacuum cleaners include smartphone control, and my robot was feeling left out. So - lets make EUFY smart again!
 
-![Happy EUFY](/Images/Happy_EUFY.jpg)
+![Smart EUFY](/Images/Complete Eufy.jpg)
 
 ## What you need: 
 
 - EUFY vacuum cleaner: [non-internet enabled models v11, v11s and v11+](https://www.eufylife.com/collections/cleaning)
 - ESP8266 based microcontroller: we use a [esp8266 12E mounted on a nodeMCU devboard v0.9](https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/) used here, Adafruit Huzzah or any other internet enabled board can be used too
-- Battery pack: Slimmer and bigger mAh is better - current example uses a [12000 mAh battery charger](https://smile.amazon.com/gp/product/B077N9KYV8/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)
+~~- Battery pack: Slimmer and bigger mAh is better - current example uses a [12000 mAh battery charger](https://smile.amazon.com/gp/product/B077N9KYV8/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)~~
+- **Updated for driving power from Eufy's battery** High efficiency buck convertor for converting 12V from [LM2596S DC to DC Step-down voltage regulator](https://www.ebay.com/itm/1x-10x-LM2596S-DC-DC-3A-Buck-Adjustable-Step-down-Power-Supply-Converter-Module/332711109230?ssPageName=STRK%3AMEBIDX%3AIT&_trksid=p2057872.m2749.l2649). Uses low energy, low heat output, and now Eufy can be connected all the time!
 - IR reciever: [VS1838B](https://smile.amazon.com/Haobase-pairs-Infrared-Emission-Receiver/dp/B01EMXC5XA/ref=sr_1_5?ie=UTF8&qid=1528055955&sr=8-5&keywords=ir+led+and+receiver) based. Wiring and further details [here](https://chioszrobots.com/2014/02/11/vs1838-tl1838-vs1838b-universal-infrared-receiving-head-remote-control/)
 - IR LED: [950 nm](https://smile.amazon.com/Haobase-pairs-Infrared-Emission-Receiver/dp/B01EMXC5XA/ref=sr_1_5?ie=UTF8&qid=1528055955&sr=8-5&keywords=ir+led+and+receiver) Used like a regular LED
 - Misc. supplies: Soldering supplies, wires, proto board, command strip (to mount controller, battery pack)
@@ -134,11 +135,32 @@ Once URL is ready - use any action to trigger a webhook with following settings.
 
 ### Mounting options
 
-The battery pack and circuit can be mounted on the EUFY using command strips. Due to this, a slim battery pack should be preffered. The product listed only raises the height of EUFY slighly.  
+~~The battery pack and circuit can be mounted on the EUFY using command strips. Due to this, a slim battery pack should be preffered. The product listed only raises the height of EUFY slighly. Getting power directly from the Eufy's battery is to be explored for future revisions. We have already tried getting power from the adapter jack besides the power button - which outputs a DC current, but also puts EUFY in charging mode if it detects a closed circuit.~~  
 
-Getting power directly from the Eufy's battery is to be explored for future revisions. We have already tried getting power from the adapter jack besides the power button - which outputs a DC current, but also puts EUFY in charging mode if it detects a closed circuit. 
+**Updated 8/11/2019**
+
+Finally got around to posting this. I have converted this setup to be in an always ON state - powered directly by the Eufy's 12V battery. The setup now looks as follows: 
+
+![Circuit, voltage regulator](/Images/Opentop.jpg)
+
+I used a high efficiency voltage regulator (LM2596S) for converting 12V to 3V which esp8266 needs, and mounted everything using command strips. You do have to work on roputing the wire - I found that using a thin wire, routing it through the sides of bumper like follows works pretty well: 
+
+![Routing wire from side, to the belly](/Images/Bumper.jpg)
+
+Once you have access to Eufy's belly, you can just route the wire to battery compartment. I made a little hole on cover using my soldering iron. There, just slice wires, and take power directly from the battery. 
+
+![Underside](/Images/Underside.jpg)
+
+### Enclosures, and bumper modification
+
+One might notice all the 3d printed parts on cleaner. These not only protect the parasitic electronics that are taking a ride with our Eufy, but also increase the height of bumper to make sure the cleaner does not go under something and rip off the electroinics. All 3d printed files are in stl folder. 
 
 ### Future revisions/ areas of improvements:
 
-- With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night
-- Powering with Eufy's very capable battery - get rid of the battery pack altogather. 
+~~- With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night~~ **Dropped due to unreliable wakeup on esp's side**
+- Powering with Eufy's very capable battery - get rid of the battery pack altogather. **Update - successful**
+
+- This is how it looked before, when I used a battery pack: 
+
+![Happy EUFY](/Images/Happy_EUFY.jpg)
+
