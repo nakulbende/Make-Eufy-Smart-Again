@@ -8,7 +8,7 @@ Make a internet enabled IR controller for EUFY vacuum cleaners. Recent models of
 
 - EUFY vacuum cleaner: [non-internet enabled models v11, v11s and v11+](https://www.eufylife.com/collections/cleaning)
 - ESP8266 based microcontroller: we use a [esp8266 12E mounted on a nodeMCU devboard v0.9](https://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/) used here, Adafruit Huzzah or any other internet enabled board can be used too
-~~- Battery pack: Slimmer and bigger mAh is better - current example uses a [12000 mAh battery charger](https://smile.amazon.com/gp/product/B077N9KYV8/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)~~
+- ~~Battery pack: Slimmer and bigger mAh is better - current example uses a [12000 mAh battery charger](https://smile.amazon.com/gp/product/B077N9KYV8/ref=oh_aui_detailpage_o03_s00?ie=UTF8&psc=1)~~
 - **Updated for driving power from Eufy's battery** High efficiency buck convertor for converting 12V from [LM2596S DC to DC Step-down voltage regulator](https://www.ebay.com/itm/1x-10x-LM2596S-DC-DC-3A-Buck-Adjustable-Step-down-Power-Supply-Converter-Module/332711109230?ssPageName=STRK%3AMEBIDX%3AIT&_trksid=p2057872.m2749.l2649). Uses low energy, low heat output, and now Eufy can be connected all the time!
 - IR reciever: [VS1838B](https://smile.amazon.com/Haobase-pairs-Infrared-Emission-Receiver/dp/B01EMXC5XA/ref=sr_1_5?ie=UTF8&qid=1528055955&sr=8-5&keywords=ir+led+and+receiver) based. Wiring and further details [here](https://chioszrobots.com/2014/02/11/vs1838-tl1838-vs1838b-universal-infrared-receiving-head-remote-control/)
 - IR LED: [950 nm](https://smile.amazon.com/Haobase-pairs-Infrared-Emission-Receiver/dp/B01EMXC5XA/ref=sr_1_5?ie=UTF8&qid=1528055955&sr=8-5&keywords=ir+led+and+receiver) Used like a regular LED
@@ -157,7 +157,7 @@ One might notice all the 3d printed parts on cleaner. These not only protect the
 
 ### Future revisions/ areas of improvements:
 
-~~- With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night~~ **Dropped due to unreliable wakeup on esp's side**
+- ~~With a 12000 mAh battery, the eps8266 in this circuit runs for a week. Future versions will explore putting ESP in sleep/ switch off telemetry at night~~ **Dropped due to unreliable wakeup on esp's side**
 - Powering with Eufy's very capable battery - get rid of the battery pack altogather. **Update - successful**
 
 - This is how it looked before, when I used a battery pack: 
