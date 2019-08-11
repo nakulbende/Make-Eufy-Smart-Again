@@ -2,7 +2,7 @@
 
 Make a internet enabled IR controller for EUFY vacuum cleaners. Recent models of EUFY and Roomba vacuum cleaners include smartphone control, and my robot was feeling left out. So - lets make EUFY smart again!
 
-![Smart EUFY](/Images/Complete Eufy.jpg)
+![Smart EUFY](/Images/Complete_Eufy.jpg)
 
 ## What you need: 
 
@@ -153,7 +153,7 @@ Once you have access to Eufy's belly, you can just route the wire to battery com
 
 ### Enclosures, and bumper modification
 
-One might notice all the 3d printed parts on cleaner. These not only protect the parasitic electronics that are taking a ride with our Eufy, but also increase the height of bumper to make sure the cleaner does not go under something and rip off the electroinics. All 3d printed files are in stl folder. 
+One might notice all the 3d printed parts on cleaner. These not only protect the parasitic electronics that are taking a ride with our Eufy, but also increase the height of bumper to make sure the cleaner does not go under something and rip off the electroinics. All 3d printed files are in Images folder. 
 
 ### Future revisions/ areas of improvements:
 
